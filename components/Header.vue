@@ -54,7 +54,7 @@ const colorIcon = computed(() => {
     <header class="w-wrapper mx-auto sm:pl-[var(--layout-gap)]">
         <div class="flex justify-between items-center gap-x-2 sm:gap-x-4">
             <div class="flex-1">
-                <Logo :fill="colorMode.value === 'dark' ? 'hsl(var(--primary))' : 'black'" />
+                <Logo :fill="(colorMode.value === 'dark' || colorMode.value === 'system') ? 'hsl(var(--primary))' : 'black'" />
             </div>
             <HeaderSearch v-model="searchQuery" class="!flex-auto" />
 
