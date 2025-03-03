@@ -18,7 +18,7 @@ const focusSearch = (event: KeyboardEvent) => {
     }
 };
 
-const searchIcon = computed(() => searchExpanded.value && !smAndLarger ? SearchX : Search)
+const searchIcon = computed(() => searchExpanded.value && !smAndLarger?.value ? SearchX : Search)
 
 watch([smAndLarger], (newVal) => {
     newVal && searchExpanded.value ? searchExpanded.value = false : searchExpanded.value = true;
