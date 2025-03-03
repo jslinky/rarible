@@ -21,6 +21,19 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui'
   },
+  app: {
+    head: {
+      title: 'Rarible',
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1 maximum-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Nuxt 3 + Tailwind CSS + Shadcn UI',
+        },
+      ],
+    },
+  },
   fonts: {
     assets: {
       // The baseURL where font files are served.
