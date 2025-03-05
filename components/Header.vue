@@ -58,9 +58,11 @@ const logoColor = computed(() => {
 </script>
 <template>
     <header class="w-wrapper mx-auto sm:pl-[var(--layout-gap)]">
-        <div class="flex justify-between items-center gap-x-2 sm:gap-x-4">
+        <div class="flex justify-between items-center gap-x-2 sm:gap-x-4">        
             <div class="flex-1">
-                <Logo :fill="logoColor" />
+                <ClientOnly>
+                    <Logo :fill="logoColor" />
+                </ClientOnly>
             </div>
             <HeaderSearch v-model="searchQuery" class="!flex-auto" />
 
