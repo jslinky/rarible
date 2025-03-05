@@ -10,7 +10,7 @@ const { data, layout = {
   xaxis: { showticklabels: false, zeroline: false, showgrid: false },
   yaxis: { showticklabels: false, zeroline: false, showgrid: false },
   margin: { l: 0, r: 0, t: 0, b: 0 },
-}, config = { responsive: true }, timePeriod = "1h" } = defineProps<{
+}, config = { responsive: true, displayModeBar: false }, timePeriod = "1h" } = defineProps<{
   data: number[];
   layout?: NuxtPlotlyLayout;
   config?: NuxtPlotlyConfig;
