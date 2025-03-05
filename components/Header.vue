@@ -49,12 +49,18 @@ const colorIcon = computed(() => {
     }
 });
 
+const logoColor = computed(() => {
+    if (colorMode.value === 'dark') return 'hsl(var(--primary))';
+    if (colorMode.value === 'light') return 'black';    
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'hsl(var(--primary))' : 'black'; 
+});
+
 </script>
 <template>
     <header class="w-wrapper mx-auto sm:pl-[var(--layout-gap)]">
         <div class="flex justify-between items-center gap-x-2 sm:gap-x-4">
             <div class="flex-1">
-                <Logo :fill="(colorMode.value === 'dark' || colorMode.value === 'system') ? 'hsl(var(--primary))' : 'black'" />
+                <Logo :fill="logoColor" />
             </div>
             <HeaderSearch v-model="searchQuery" class="!flex-auto" />
 
